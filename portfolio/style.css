@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2? família=Poppins:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 
 body{
     margin: 0%;
@@ -32,14 +33,18 @@ body{
 
     .social-media{
         margin-top: 1rem;
+        text-transform: uppercase;
+        font-size: medium;
+        font-family: 'Poppins' ,sans-serif;
         display: flex;
+        border-color: #1E1E2A;
     }
 
     .social-media a{
         text-decoration: none;
-        color: #1E1E2A;
+        color: #1E1E2A ;
         padding: 1rem 4rem;
-        border: 1px solid 1E1E2A;
+        border: 2px solid #1E1E2A; 
         min-width: 4rem;
         display: flex;
         align-items: center;
@@ -49,6 +54,7 @@ body{
 
     a:hover{
         background-color: #ffffff;
+        transform: scale(2.05px);
     }
 
     /* menu hamburguer*/
@@ -73,8 +79,8 @@ body{
 
     .checkbox .trace{
         width: 50px;
-        height: 2px;
-        background-color: 1E1E2A;
+        height: 3px;
+        background-color: #1E1E2A;
         position: absolute;
         border-radius: 4px;
         transition: 0.5s ease-in-out;
@@ -108,15 +114,15 @@ body{
         background-color: transparent;
         height: 4px;
         width: 10px;
-        border-radius: 5px;
-        box-shadow: 0px 0px 0px #ffffff;  
+        border-radius: 50%;
+        box-shadow: 0px 0px 0px 0px #ffffff;  
         z-index: -1;
         transition:400ms ease-in-out 0s;
     }
 
-    .menu-items{
+    .menu-itens {
         position: fixed;
-        top: 0px;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
@@ -129,11 +135,11 @@ body{
         transition: 400ms ease-in-out 0s;
     }
 
-    .menu-items ul{
+    .menu-itens ul{
         list-style-type: none;
     }
 
-    .menu-items ul li a{
+    .menu-itens ul li a{
         margin: 10px 0;
         color: #1E1E2A;
         text-decoration: none;
@@ -141,4 +147,136 @@ body{
         letter-spacing: 4px;
         font-size: 40px;
     }
+
+
+    #toggle:checked + .checkbox .trace:nth-child(1){
+        transform: rotate(45deg);
+        top: 47px;
+    }
+
+    #toggle:checked + .checkbox .trace:nth-child(2){
+        transform: translate(-100px);
+        width: 30px;
+        visibility: hidden;
+        opacity: 0;
+    }
+
+    #toggle:checked ~.menu{
+        box-shadow: 0px 0px 0px 0px 100vmax #ffffff;
+        z-index: 1;
+    }
+
+    #toggle:checked ~.menu-itens{
+        visibility: visible;
+        opacity: 1;
+    }
+
+    /*cards do main*/
+
+    .container{
+        height: auto;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        margin: 3rem 0;
+    }
+
+    .card-container{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 60%;
+        
+    }
+
+    .card{
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        margin: 3rem 0 0 0;
+        display: flex;
+        align-items: center;
+        justify-self: center;
+        background-color: #bacce5e7;
+        background-image: url(andreson_01.png);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        filter: grayscale(0.5);
+        color: #1E1E2A;
+        cursor: pointer;
+        transition: 0.5s;
+    }
+
+    .card:hover{
+        border: 15px solid #ffffff;
+        transition: 0.5s ease-in-out;
+        filter: unset;
+    }
+
+
+    .card-text{
+        width: 60%;
+        letter-spacing: 2px;
+        color: #32324b;
+        font-family: 'Poppins',sans-serif;
+        
+        
+    }
+
+
+    .card-wrapper{
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .card-wrapper ::before{
+        content: '';
+        position: absolute;
+        height: 100px;
+        width:100px;
+        border-radius: 50%;
+        display: flex;
+        border: 1px solid #ffffff;
+        opacity: 1;
+        transition: 0.5s ease-in-out;
+        
+    }
+
+    .card-wrapper h2{
+        font-size: 32px;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        margin: 0;
+        transition: 0.5s ease-in-out;
+    }
+
+    .card-wrapper p{
+        font-size: 0;
+        visibility: visible;
+        opacity: 0;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: 0.5s ease-in-out;
+    }
+
+    .card:hover > .card-wrapper ::before{
+        height: 200px;
+        width: 200px;
+        opacity: 1;
+    }
+
+    .card:hover > .card-wrapper p{
+        opacity: 1;
+        visibility: visible;
+        font-size: 14px;
+    }
+
+
+
 
